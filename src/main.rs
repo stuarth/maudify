@@ -24,7 +24,7 @@ fn node_to_maud(node: visdom::types::BoxDynElement, indent_level: usize) -> Stri
             }
 
             if children_content.is_empty() {
-                match node.text() {
+                match node.text().trim() {
                     s if s.is_empty() => format!("{}{}{} {{}}", indent, tag_name, attrs),
                     s => format!("{}{}{} {{ \"{}\" }}", indent, tag_name, attrs, s),
                 }
