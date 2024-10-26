@@ -1,0 +1,7 @@
+[package]
+name = "maudify"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+visdom = { path = "/Users/stu/dev/visdom" }
