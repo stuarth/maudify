@@ -5,3 +5,6 @@ edition = "2021"
 
 [dependencies]
 visdom = { version = "1.0.2" }
+
+[profile.release]
+lto = true
