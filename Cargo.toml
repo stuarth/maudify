@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-visdom = { git = "https://github.com/stuarth/visdom.git" }
+visdom = { version = "1.0.2" }
