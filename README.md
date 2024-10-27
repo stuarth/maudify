@@ -4,7 +4,9 @@
 
 ### Installing
 
-Clone the repo, `cargo build`, and put the resulting executable in your `$PATH`
+```sh
+cargo install --git https://github.com/stuarth/maudify/
+```
 
 ### Running
 
