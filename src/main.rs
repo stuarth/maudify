@@ -12,7 +12,12 @@ fn node_to_maud(node: visdom::types::BoxDynElement, indent_level: usize) -> Stri
             let tag_name = node.tag_name().to_lowercase();
             let mut attrs = String::new();
             for (name, value) in node.get_attributes() {
-                attrs.push_str(&format!(" {}=\"{}\"", name, value.to_list().join(" ")));
+                let attr_name = if name.contains('@') || name.contains(':') {
+                    format!("\"{}\"", name)
+                } else {
+                    name.to_string()
+                };
+                attrs.push_str(&format!(" {}=\"{}\"", attr_name, value.to_list().join(" ")));
             }
 
             let mut children_content = Vec::new();
