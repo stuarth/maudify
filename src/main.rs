@@ -12,7 +12,7 @@ fn node_to_maud(node: visdom::types::BoxDynElement, indent_level: usize) -> Stri
             let tag_name = node.tag_name().to_lowercase();
             let mut attrs = String::new();
             for (name, value) in node.get_attributes() {
-                let attr_name = if name.contains('@') || name.contains(':') {
+                let attr_name = if name.contains('@') || name.contains(':') || name.contains('.') {
                     format!("\"{}\"", name)
                 } else {
                     name.to_string()
